@@ -36,7 +36,12 @@ provider "yandex" {
 ```
 [almanax@alma8 cloud-terraform]$ yc compute image list --folder-id standard-images
 ```
-Воспользовавшись документацией, подготавливаем файлы main.tf, versions.tf и output.tf. Иницализируем терраформ и запускаем сборку:
+Воспользовавшись документацией, подготавливаем файлы main.tf https://github.com/evgeny-brianov/devops-netology/blob/main/7.2/main.tf, versions.tf и output.tf.
+```
+https://github.com/evgeny-brianov/devops-netology/blob/main/7.2/main.tf
+
+```
+Иницализируем терраформ и запускаем сборку:
 ```
 [almanax@alma8 cloud-terraform]$ terraform init
 [almanax@alma8 cloud-terraform]$ terraform apply -auto-approve
