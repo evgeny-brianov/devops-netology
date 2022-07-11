@@ -1,4 +1,6 @@
-**1.** Создаем папку проекта и инициализируем YandexCloud:
+**1.** В текущей ситуации получилось сделать ДЗ только через YC
+
+Создаем папку проекта и инициализируем YandexCloud:
 ```
 [almanax@alma8 7.2]$ mkdir cloud-terraform
 [almanax@alma8 cloud-terraform]$ yc init
@@ -16,7 +18,7 @@ provider "yandex" {
   zone      = "ru-central1-a"
 }
 ```
-Для того, чтобы не указывать токен авторизации необходимо экспортировать его
+Для того, чтобы не указывать токен авторизации необходимо экспортировать его:
 ```
 [almanax@alma8 cloud-terraform]$ export TF_VAR_yc_token="******************************************"
 ```
@@ -36,14 +38,17 @@ provider "yandex" {
 ```
 [almanax@alma8 cloud-terraform]$ yc compute image list --folder-id standard-images
 ```
-Воспользовавшись документацией, подготавливаем файлы main.tf https://github.com/evgeny-brianov/devops-netology/blob/main/7.2/main.tf, versions.tf и output.tf.
-```
-https://github.com/evgeny-brianov/devops-netology/blob/main/7.2/main.tf
+Воспользовавшись документацией, подготавливаем файлы [main.tf](https://github.com/evgeny-brianov/devops-netology/blob/main/7.2/main.tf), 
+[versions.tf](https://github.com/evgeny-brianov/devops-netology/blob/main/7.2/versions.tf) и [output.tf](https://github.com/evgeny-brianov/devops-netology/blob/main/7.2/output.tf).
 
-```
-Иницализируем терраформ и запускаем сборку:
+Иницализируем терраформ:
 ```
 [almanax@alma8 cloud-terraform]$ terraform init
+```
+![11](https://user-images.githubusercontent.com/95703090/178199348-45e74e41-1def-47a1-a1c2-bfc6adbd5b6e.JPG)
+
+и запускаем сборку:
+```
 [almanax@alma8 cloud-terraform]$ terraform apply -auto-approve
 ```
 Результатом будет развернутый инстанс в YC:
